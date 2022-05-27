@@ -1,0 +1,25 @@
+version: "3.8"
+services:
+  web:
+    volumes:
+      - "./config/docker/nginx/default.conf:/etc/nginx/conf.d/default.conf:ro"
+      - "./public:/app/public:ro"
+    ports:
+      - "80:80"
+      - "443:443"
+
+  worker:
+    build:
+      target: development
+    volumes:
+      - "./:/app"
+
+  app:
+    build:
+      target: development
+    volumes:
+      - "./:/app"
+
+  db:
+    ports:
+      - "3306:3306"

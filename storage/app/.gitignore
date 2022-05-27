@@ -1,0 +1,7 @@
+*
+!languages.php
+!tlds-alpha-by-domain.txt
+!public/
+!wp/
+!wp/*
+!.gitignore
